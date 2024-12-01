@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -8,9 +6,6 @@ import java.util.stream.Stream;
 public class DeliveryFactory {
     private final Map<String, DeliveryLocation> locations = new HashMap<>();
 
-//    public DeliveryFactory() {
-//        this.locations = new ArrayList<>();
-//    }
 
     private String createId(DeliveryLocationData data) {
         // Usa Stream para processar os valores
@@ -21,7 +16,8 @@ public class DeliveryFactory {
 
     DeliveryLocation makeLocation(DeliveryLocationData intrinsicState) {
         String key = createId(intrinsicState);
-        // Procurando se já existe um DeliveryLocation com a mesma chave
+
+        //   Procurando se já existe um DeliveryLocation com a mesma chave
         if (locations.containsKey(key)) {
             return this.locations.get(key);
         }
